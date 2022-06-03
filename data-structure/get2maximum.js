@@ -17,5 +17,6 @@ console.log(a[a.length - 1], a[a.length - 2]);
 //         greater = a[i];
 //     }
 // }
+}
 
 // console.log(greater, greatest);
