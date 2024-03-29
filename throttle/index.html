@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trottle Example</title>
+</head>
+<body>
+<button onClick="clickHandler()">Click Me</button>
+
+<script>
+    
+    function throttle(fn, delay) {
+        let prevTime = 0;
+        return function() {
+            if(Date.now() - prevTime > delay) {
+                prevTime = Date.now();
+                setTimeout(() => {
+                    fn()
+                }, delay);
+            }
+        }
+    }
+
+    const clickHandler = throttle(() => {
+        console.log(`button clicked`)
+    }, 1000)
+</script>
+</body>
+</html>
